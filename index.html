@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Final Project</title>
+<meta name="description" content="This was created for the purpose of seeing what all I have learned from this course">
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<body>
+<div class="pagebox">
+<header>
+<h1>Interest's in Multimedia form</h1>
+</header>
+
+<nav>
+<div class="topnav">
+<a class="current" href="index.html">Home</a>
+<a href="contact.html">Contact</a>
+<a href="aboutme.html">About me</a>
+</div>
+</nav>
+
+<article>
+<section>
+<h2>Reading</h2>
+<p>
+<img class="smallpic" src="images/library.jpg" alt="">  
+I like to read in a comfortable warm enviroment like a home. Reading at public libraries around where I live does not feel good. While they are quiet and peaceful. They don't have the same feel as laying down on your couch or bed while reading. </p>
+<hr/>
+</section>
+
+<section>
+<h2>Soccer</h2>
+<p>
+<img class="bigpic" src="images/goalie.jpg" alt="">
+Soccer is by far my favorite sport. The joy I have from just watching is the best. Don't get me wrong I love playing soccer, the feeling of making a goal or getting a save is my favorite feeling I have ever had.</p>
+<hr/>
+</section>
+
+
+<section id="slideshow">
+<h2>Other things that I like to do</h2>
+<div class="slideshow-container">
+<div class="mySlides fade">
+  <div class="numbertext">1 / 2</div>
+  <img src="images/Beach.jpg" style="width:100%">
+  <div class="text"></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 2</div>
+  <img src="images/fishing.jpg" style="width:100%">
+  <div class="text"></div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+</div>
+
+<hr/>
+</section>
+
+<section>
+<h2>Video</h2>
+<div class="video_container">
+<iframe src="https://www.youtube.com/embed/M759yNSOTMs?si=6106wRy3cB4H7KGu"></iframe>
+</div>
+<hr/>
+</section>
+</article>
+
+</body>
+
+<footer>
+<p>Page created by Austin &copy; 2024</p>
+</footer>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+</html>
